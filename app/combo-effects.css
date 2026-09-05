@@ -1,0 +1,55 @@
+.phone-stage::after{
+  content:"";
+  position:absolute;
+  z-index:7;
+  inset:0;
+  pointer-events:none;
+  opacity:var(--combo-glow,0);
+  box-shadow:
+    inset 0 0 var(--combo-size,0px) #d7ff43,
+    inset 0 0 calc(var(--combo-size,0px) / 2) #ffffff;
+  transition:opacity .12s ease,box-shadow .12s ease;
+}
+
+.combo-2{--combo-glow:.14;--combo-size:24px}
+.combo-3{--combo-glow:.19;--combo-size:30px}
+.combo-4{--combo-glow:.24;--combo-size:36px}
+.combo-5{--combo-glow:.30;--combo-size:44px}
+.combo-6{--combo-glow:.36;--combo-size:50px}
+.combo-7{--combo-glow:.42;--combo-size:58px}
+.combo-8{--combo-glow:.48;--combo-size:66px}
+.combo-9{--combo-glow:.54;--combo-size:74px}
+.combo-10{--combo-glow:.62;--combo-size:84px}
+
+.combo-2::after,.combo-3::after,.combo-4::after,.combo-5::after,.combo-6::after,.combo-7::after,.combo-8::after,.combo-9::after,.combo-10::after{
+  animation:combo-breathe .52s ease-in-out infinite alternate;
+}
+
+.combo-2 .hud>div:last-child strong,
+.combo-3 .hud>div:last-child strong,
+.combo-4 .hud>div:last-child strong,
+.combo-5 .hud>div:last-child strong,
+.combo-6 .hud>div:last-child strong,
+.combo-7 .hud>div:last-child strong,
+.combo-8 .hud>div:last-child strong,
+.combo-9 .hud>div:last-child strong,
+.combo-10 .hud>div:last-child strong{
+  color:var(--acid);
+  text-shadow:0 0 12px #d7ff4370;
+}
+
+.impact-word.super{
+  font-size:48px;
+  color:var(--acid);
+  text-shadow:0 0 16px #d7ff43,5px 5px 0 #000;
+  white-space:nowrap;
+}
+
+@keyframes combo-breathe{
+  from{filter:brightness(.82)}
+  to{filter:brightness(1.28)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .combo-2::after,.combo-3::after,.combo-4::after,.combo-5::after,.combo-6::after,.combo-7::after,.combo-8::after,.combo-9::after,.combo-10::after{animation:none!important}
+}
