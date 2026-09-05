@@ -13,7 +13,8 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 
 const localBindingConfig = {
   main: "./worker/index.ts",
-  compatibility_flags: ["nodejs_compat"],
+  // nodejs_compat is already supplied by wrangler.jsonc. Defining it here too
+  // makes workerd reject the merged config as a duplicate compatibility flag.
   d1_databases: d1
     ? [
         {
