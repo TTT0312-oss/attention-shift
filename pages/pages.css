@@ -1,0 +1,10 @@
+/* GitHub Pages is static hosting, so server-backed ranking is hidden here. */
+.score-entry,
+.ranking-button,
+.ranking-overlay {
+  display: none !important;
+}
+
+.result-actions {
+  grid-template-columns: 1fr !important;
+}
