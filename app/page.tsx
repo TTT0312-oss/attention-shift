@@ -143,8 +143,9 @@ export default function Home(){
         return next;
       });
       if(added){
-        tone(310,.045,"square",.018);
-        tone(465,.05,"square",.018,.045);
+        tone(880,.04,"triangle",.022);
+        tone(1320,.07,"sine",.026,.045);
+        tone(1760,.04,"sine",.014,.105);
         setMessage(Math.random()<.34?"新しい依頼です":"優先順位を確認");
       }
     },3100);
